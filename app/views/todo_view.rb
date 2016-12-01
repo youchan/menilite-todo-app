@@ -3,11 +3,15 @@ class TodoView
 
   state :entries, []
 
+  def initialize
+    Entry.fetch {|entries| @state.entries = entries }
+  end
+
   def handle_keydown(event)
     if event.code == 13
       input = @refs[:entry]
       unless input.value.empty?
-        @state.entries << Entry.new(description: input.value)
+        @state.entries << Entry.create(description: input.value)
         input.value = ''
         force_update
       end
