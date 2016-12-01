@@ -20,7 +20,7 @@ GEM
     haml (4.0.7)
       tilt
     hike (1.2.3)
-    hyalite (0.0.5)
+    hyalite (0.0.6)
       opal
       opal-browser
     i18n (0.7.0)
