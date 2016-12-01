@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201140521) do
+ActiveRecord::Schema.define(version: 20161201161052) do
 
   create_table "entries", force: :cascade do |t|
     t.string  "guid"
     t.string  "description"
     t.boolean "done"
     t.index ["guid"], name: "index_entries_on_guid"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "guid"
+    t.string "name"
+    t.string "password"
+    t.index ["guid"], name: "index_users_on_guid"
   end
 
 end
