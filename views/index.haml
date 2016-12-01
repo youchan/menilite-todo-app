@@ -2,8 +2,14 @@
 %html(lang="en" data-framework="hyalite")
   %head
     %link{rel:"stylesheet", href:"assets/css/application.css"}
+    %link{rel:"stylesheet", href:"assets/css/bulma.css"}
   %body
-    .content
+    %section.hero.is-light
+      .hero-body
+        .container
+          %h2.title Todo
+          .box
+            .content
 
     = ::Opal::Sprockets.javascript_include_tag('application', sprockets: settings.opal.sprockets, prefix: 'assets', debug: true)
 

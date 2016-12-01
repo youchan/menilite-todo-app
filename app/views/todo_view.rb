@@ -5,8 +5,10 @@ class TodoView
 
   def render
     div({class: 'todo-view'},
-        input({type: 'text'}),
-        ul({}, @state.entries.map{|entry| li({}, entry)})
+      p({class: 'controll'},
+        input({class: 'input', type: 'text', placeholder: 'Input todo'})
+      ),
+      ul({class: 'todo-list'}, @state.entries.map{|entry| li({}, entry)})
     )
   end
 end
