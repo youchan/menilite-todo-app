@@ -1,0 +1,15 @@
+!!!
+%html(lang="en" data-framework="hyalite")
+  %head
+    %link{rel:"stylesheet", href:"assets/css/application.css"}
+    %link{rel:"stylesheet", href:"assets/css/bulma.css"}
+    %link{rel:"stylesheet", href:"assets/css/font-awesome.css"}
+  %body
+    %section.hero.is-light
+      .hero-body
+        .container
+          %h2.title Login
+          .box
+            .content
+
+    = ::Opal::Sprockets.javascript_include_tag('login', sprockets: settings.opal.sprockets, prefix: 'assets', debug: true)

@@ -27,6 +27,14 @@ class Server < Sinatra::Base
     haml :index
   end
 
+  get '/signup' do
+    haml :signup
+  end
+
+  get '/login' do
+    haml :login
+  end
+
   get "/favicon.ico" do
   end
 end
