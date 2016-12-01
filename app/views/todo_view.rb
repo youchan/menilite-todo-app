@@ -1,13 +1,13 @@
 class TodoView
   include Hyalite::Component
 
-  state :entries, [ 'Entry 1', 'Entry 2' ]
+  state :entries, []
 
   def handle_keydown(event)
     if event.code == 13
       input = @refs[:entry]
       unless input.value.empty?
-        @state.entries << input.value
+        @state.entries << Entry.new(description: input.value)
         input.value = ''
         force_update
       end
@@ -19,7 +19,7 @@ class TodoView
       p({class: 'controll'},
         input({class: 'input', ref: 'entry', type: 'text', placeholder: 'Input todo', onKeyDown: self.method(:handle_keydown)})
       ),
-      ul({class: 'todo-list'}, @state.entries.map{|entry| li({}, entry)})
+      ul({class: 'todo-list'}, @state.entries.map{|entry| li({}, entry.description)})
     )
   end
 end

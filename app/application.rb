@@ -1,5 +1,6 @@
 require 'hyalite'
-#require 'menilite'
+require 'menilite'
+require_relative 'models/entry'
 require_relative 'views/todo_view'
 
 class AppView
