@@ -23,8 +23,22 @@ class Server < Sinatra::Base
     enable :sessions
   end
 
+  def login?
+    if session[:user_id]
+      user = User[session[:user_id]]
+      if user
+        return true
+      end
+    end
+    false
+  end
+
   get '/' do
-    haml :index
+    if login?
+      haml :index
+    else
+      redirect to('/login')
+    end
   end
 
   get '/signup' do
