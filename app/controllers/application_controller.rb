@@ -1,7 +1,9 @@
 class ApplicationController < Menilite::Controller
   before_action(exclude: ['ApplicationController#login', 'User#signup']) do
     user = User[session[:user_id]]
-    unless user
+    if user
+      Menilite::PrivilegeService.current.privileges << UserPrivilege.new(user)
+    else
       raise Menilite::Unauthorized.new
     end
   end

@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201161052) do
+ActiveRecord::Schema.define(version: 20161202030210) do
 
   create_table "entries", force: :cascade do |t|
     t.string  "guid"
     t.string  "description"
     t.boolean "done"
+    t.string  "user_guid"
     t.index ["guid"], name: "index_entries_on_guid"
   end
 
