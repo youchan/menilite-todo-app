@@ -13,3 +13,5 @@ gem 'sqlite3'
 
 gem 'haml'
 gem 'sass'
+
+gem 'bcrypt'

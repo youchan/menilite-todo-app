@@ -6,6 +6,13 @@ require_relative 'models/user'
 class SignupView
   include Hyalite::Component
 
+  def signup
+    user = User.new(name: @refs[:name].value)
+    user.signup(@refs[:password].value) do
+      $window.location.assign('/')
+    end
+  end
+
   def render
     div({class: 'signup-view'},
       p({class: 'control has-icon'},
